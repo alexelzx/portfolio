@@ -1,20 +1,14 @@
-/* ==========================================================
-   EDIT ONLY THIS FILE to change the content of your site.
-   Sources: LinkedIn, CV, GitHub (alexelzx), efprp.org.
-   Items marked TODO need your check or more info.
-   ========================================================== */
 const DATA = {
   name: "Alexios Elizalde Xirokosta",
   role: "Founder & CEO of EFPRP",
   location: "Toulouse, France",
   email: "alexios.elizalde-xirokosta@etu.iut-tlse3.fr",
-  cv: "",                               // TODO: add a public CV path when a privacy-safe version is ready
-                                        // (your current CV shows home address, phone and birth date: make a version without them)
+  cv: "",                               // to-do: add a public CV path when a privacy-safe version is ready
+                                        
 
-  // Hero sentence. <em> = italic serif.
+  //hero
   intro: "I lead a European non-profit for fire prevention and rural preservation, and I <em>build the software</em> behind it.",
 
-  // Big statement in the yellow block. <em> = italic serif.
   statement: "Software that warns people <em>before the fire arrives.</em>",
 
   social: {
@@ -90,7 +84,7 @@ const DATA = {
   ],
 
   languages: ["Spanish — C2, native", "Greek — C2, native", "English — C1+", "French — C1+"],
-  // TODO: check these, I inferred them from your profile
+  
   interests: [
     ["Music", "Listening, producing beats and exploring new sounds."],
     ["Podcasts", "Hosting and learning through long-form conversations."],
@@ -109,7 +103,7 @@ const DATA = {
 
   /* Work workspace. group = sidebar heading. notes = sticky notes (max 4). */
   projects: [
-    { group: "Software", title: "EFRAS", status: "Live", year: "2026",
+    { group: "Software", title: "EFRAS", status: "Live", year: "2026", image: "assets/efras.png",
       desc: "The European Fire & Risk Alert System: SMS alerts tied to exact GPS coordinates, so people and rural communities hear about a wildfire near their land wherever they are. Co-developed with a colleague at the EFPRP; it runs on the EFPRP Vanguard Message Grid.",
       notes: [
         "Live in 10 countries, from France and Germany to Greece and Sweden. Spain is next.",
@@ -120,13 +114,13 @@ const DATA = {
       stack: ["SMS alerting", "Geospatial", "Privacy by design"],
       links: [["Read the announcement", "https://www.efprp.org/blog/efprp-1/official-deployment-of-the-european-fire-risk-alert-system-efras-22"]] },
 
-    { group: "Software", title: "Integrity Reporting Portal", status: "Internal", year: "",
+    { group: "Software", title: "Integrity Reporting Portal", status: "Internal", year: "", image: "assets/irp.png",
       desc: "A secure portal I coded for the EFPRP, where concerns about compliance and procedural integrity can be reported.",   /* TODO: check this description and add 2–3 notes (features, users, stack) */
       notes: [],
       stack: [],
       links: [] },
 
-    { group: "Software", title: "MCalC+", status: "Public beta", year: "2026",
+    { group: "Software", title: "MCalC+", status: "Public beta", year: "2026", image: "assets/mcalc.png",
       desc: "A student operating system for the BUT Information-Communication at IUT Toulouse. It began as a grade simulator and grew into a live calendar, absence tracker and homework planner, installable as a web app. Unofficial and student-led.",
       notes: [
         "Grade simulator for BUT 1 to 3, with a radar chart and PDF report export.",
@@ -137,7 +131,7 @@ const DATA = {
       stack: ["JavaScript", "Firebase", "Chart.js", "PWA"],
       links: [["Open the app", "https://alexelzx.github.io/MCalC-/index.html"], ["Code", "https://github.com/alexelzx/MCalC-"]] },
 
-    { group: "Software", title: "SmartST Debate Management Suite", status: "Live", year: "2026",
+    { group: "Software", title: "SmartST Debate Management Suite", status: "Live", year: "2026", image: "assets/smartst.png",
       desc: "A debate management suite for any size of debate. It removes the admin friction of structured argumentation by keeping speaking clocks in sync across every device through the cloud.",
       notes: [
         "Six modules, from a host command center to a participant workspace.",
@@ -148,25 +142,31 @@ const DATA = {
       stack: ["JavaScript", "Firebase", "CSS"],
       links: [["Open the app", "https://alexelzx.github.io/SmartST-Debate-Management-Suite-DMS-/main.html"], ["Code", "https://github.com/alexelzx/SmartST-Debate-Management-Suite-DMS-"]] },
 
-    { group: "Organization", title: "EFPRP", status: "Founder & CEO", year: "2024 – now",
+    { group: "Organization", title: "EFPRP", status: "Founder & CEO", year: "2024 – now", image: "assets/efprp-website.png",
       desc: "Founded in October 2024 by Alexios Elizalde Xirokosta and Rémi Baysang, the European Fire Prevention and Rural Preservation Organization is a Toulouse-based non-profit creating a safer and more sustainable future for Europe. Its work combines fire prevention, rapid response, independent environmental analysis, environmental preservation, professional certifications and rural development. The organization supports education and public awareness, early detection, resilient communities, habitat restoration and the preservation of rural cultural and architectural heritage. Its WP-LSC certification is grounded in EU-level research and regulation, including Land-based Wildfire Prevention (Publication 4e6cc1f1) from the European Commission (2021).",
       notes: [],
       stack: ["Fire prevention", "Environmental analysis", "Rural development", "WP-LSC certification"],
       links: [["Website", "https://www.efprp.org"]] },
 
-    { group: "Organization", title: "EFPRP Integrity Reporting Portal", status: "Internal", year: "2026",
+    { group: "Organization", title: "European Rural Heritage Library (ERHL)", status: "Launched today", year: "30 Sep 2026", image: "assets/erhl.png",
+      desc: "A digital library of high-resolution images preserving the cultural heritage of Europe, launched on 30 September 2026.",
+      notes: ["Preserves Europe’s rural and cultural heritage through carefully documented imagery.", "High-resolution photographs make places, objects and traditions available for long-term reference."],
+      stack: ["Digital library", "Cultural heritage", "High-resolution imaging"],
+      links: [["Open the library", "https://erhl.efprp.org"]] },
+
+    { group: "Organization", title: "EFPRP Integrity Reporting Portal", status: "Internal", year: "2026", image: "assets/irp.png",
       desc: "An anonymous reporting portal for EFPRP volunteers and partner beneficiary organizations, created for the Internal Support & Internal Affairs department. It provides a secure channel for whistleblowers and supports full compliance through confidential integrity reporting.",
       notes: [],
       stack: ["Whistleblowing", "Compliance", "Secure reporting"],
       links: [["Reporting portal", "https://report.isia.efprp.org"]] },
 
-    { group: "Organization", title: "EANENP Network", status: "Ongoing", year: "2025 – now",
+    { group: "Organization", title: "EANENP Network", status: "Ongoing", year: "2025 – now", image: "assets/eanenp.png",
       desc: "The European Alliance for Nature and Environmental Protection is a unified force for nature that empowers local communities and organizations to protect and restore Europe's natural environment. The network focuses on ecosystem restoration, biodiversity conservation, habitat restoration, rewilding and sustainable practices. It brings environmental non-profits, researchers and policymakers together for knowledge exchange and joint conservation projects, while advocating for stronger European environmental protection policies.",
       notes: ["Supports habitat restoration, rewilding and biodiversity conservation across Europe.", "Connects non-profits, researchers and policymakers through shared projects and knowledge.", "Advocates for stronger legal frameworks for nature conservation and ecosystem protection."],
       stack: ["Ecosystem restoration", "Biodiversity", "Advocacy", "Knowledge sharing"],
       links: [["Website", "https://www.eanenp.org"], ["Network page", "https://www.efprp.org/european-alliance-network-for-ecosystem-nature-protection-eanenp"]] },
 
-    { group: "Organization", title: "BASF competitor intelligence", status: "Completed", year: "2025",
+    { group: "Organization", title: "BASF competitor intelligence", status: "Completed", year: "2025", image: "assets/basfwork.png",
       desc: "Market monitoring built during my internship in Mexico City: an automated intelligence system and a competitor database, using Power BI and Copilot Agent.",
       notes: [],
       stack: ["Power BI", "Copilot Agent", "Market research"],
@@ -213,7 +213,6 @@ const DATA = {
   },
 
   // Selected certifications with supplied images and dates.
-  // TODO: add dates, links (url) and images (image) as you have them.
   certificates: [
     { title: "Google Ads Search Certification (2026)", issuer: "Google Digital Academy (Skillshop)", category: "Marketing", date: "2026-08", id: "192778480", url: "", image: "assets/ads-search-cert.png" },
     { title: "Google UX Design", issuer: "Coursera", category: "Design", date: "2025-10", id: "IQJY890TZ3L1", url: "", image: "assets/ux.png" },
