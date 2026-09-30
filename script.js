@@ -106,10 +106,11 @@
     panel.setAttribute('aria-labelledby', 'tab' + i);
     var notes = (p.notes || []).map(function (n) { return '<div class="note">' + esc(n) + '</div>'; }).join('');
     var stack = (p.stack || []).map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('');
+    var image = p.image ? '<figure class="p-image"><img src="' + esc(safeUrl(p.image)) + '" alt="Screenshot of ' + esc(p.title) + '" loading="lazy"></figure>' : '';
     var lk = (p.links || []).map(function (l, k) {
       return '<a class="btn ' + (k ? 'line' : '') + '" href="' + esc(safeUrl(l[1])) + '" target="_blank" rel="noopener">' + esc(l[0]) + '</a>';
     }).join('');
-    panel.innerHTML = '<div class="p-in"><div class="p-title"><h3>' + esc(p.title) + '</h3>' +
+    panel.innerHTML = '<div class="p-in">' + image + '<div class="p-title"><h3>' + esc(p.title) + '</h3>' +
       (p.status ? '<span class="badge">' + esc(p.status) + '</span>' : '') + (p.year ? '<span class="p-year">' + esc(p.year) + '</span>' : '') + '</div>' +
       '<p class="p-desc">' + esc(p.desc) + '</p>' +
       (notes ? '<div class="notes">' + notes + '</div>' : '') +
@@ -271,5 +272,31 @@
            'Q' + (x + w / 2 + lean * .3).toFixed(1) + ' ' + (121 - h * .6).toFixed(1) + ' ' + (x + w / 2).toFixed(1) + ' 121Z';
     }
     $('#tufts').innerHTML = '<path d="' + d + '"/><rect y="118" width="1440" height="4"/>';
+  })();
+
+  /* Reveal content as it enters the viewport, with a short stagger within each group. */
+  (function () {
+    var selectors = [
+      '.band .wrap', '.path > div', '#work > .h2', '#work > .lede', '.ws',
+      '#media > .h2', '#media > .lede', '.media-card', '#stack > .h2', '#stack > .chips',
+      '#skills .logo', '#certs > .h2', '.cert-tools', '.cert', '#contact .wrap > *'
+    ];
+    var targets = document.querySelectorAll(selectors.join(','));
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var reveal = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.setProperty('--reveal-delay', (i % 6) * 0.06 + 's');
+      reveal.observe(el);
+    });
   })();
 })();
