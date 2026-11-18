@@ -117,7 +117,7 @@ const DATA = {
     { group: "Software", title: "Integrity Reporting Portal", status: "Internal", year: "", image: "assets/irp.png",
       desc: "A secure portal I coded for the EFPRP, where concerns about compliance and procedural integrity can be reported.",   /* TODO: check this description and add 2–3 notes (features, users, stack) */
       notes: [],
-      stack: [],
+      stack: ["Secure reporting", "Compliance workflows", "Privacy by design"],
       links: [] },
 
     { group: "Software", title: "MCalC+", status: "Public beta", year: "2026", image: "assets/mcalc.png",
@@ -148,11 +148,11 @@ const DATA = {
       stack: ["Fire prevention", "Environmental analysis", "Rural development", "WP-LSC certification"],
       links: [["Website", "https://www.efprp.org"]] },
 
-    { group: "Organization", title: "European Rural Heritage Library (ERHL)", status: "Launched today", year: "30 Sep 2026", image: "assets/erhl.png",
+    { group: "Organization", title: "European Cultural & Rural Heritage Library (ECRHL)", year: "30 Sep 2026", image: "assets/ecrhl.png",
       desc: "A digital library of high-resolution images preserving the cultural heritage of Europe, launched on 30 September 2026.",
       notes: ["Preserves Europe’s rural and cultural heritage through carefully documented imagery.", "High-resolution photographs make places, objects and traditions available for long-term reference."],
       stack: ["Digital library", "Cultural heritage", "High-resolution imaging"],
-      links: [["Open the library", "https://erhl.efprp.org"]] },
+      links: [["Open the library", "https://ecrhl.efprp.org"]] },
 
     { group: "Organization", title: "EFPRP Integrity Reporting Portal", status: "Internal", year: "2026", image: "assets/irp.png",
       desc: "An anonymous reporting portal for EFPRP volunteers and partner beneficiary organizations, created for the Internal Support & Internal Affairs department. It provides a secure channel for whistleblowers and supports full compliance through confidential integrity reporting.",
